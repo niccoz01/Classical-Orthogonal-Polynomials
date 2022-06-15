@@ -1,14 +1,8 @@
-from numpy.lib.type_check import real
 import sympy as sym
 from sympy import Symbol, Derivative, Function, integrate, E, simplify, Eq, dsolve
-from sympy.utilities.lambdify import lambdify
 from sympy.plotting.plot import plot
-from sympy.simplify.fu import L
 from tabulate import tabulate
-from IPython.display import display, Math
-import matplotlib.pyplot as plt
 from sympy.plotting import plot
-import numpy as np
 import seaborn as sns
 
 sns.set()
@@ -132,5 +126,3 @@ The first {N} eigenvalues and their corresponding polynomials are:
 {full_solns}
 Please note that these polynomials may differ up to a common factor.'''
         return fc
-
-print(sl(y_x+k*y, 0, 3))
