@@ -52,5 +52,29 @@ Please note the following:
 * The symbol representing the eigenvalue (generally called λ) is k (see examples below)
 * It is not possible at the moment to have any constants e.g. α, β inside A, B and C
 ## Examples
+- Hermite equation:
 
+![equation](https://latex.codecogs.com/gif.image?%5Cdpi%7B110%7D%5Cfrac%7B%5Cmathrm%7Bd%7D%5E2%20y%7D%7B%5Cmathrm%7Bd%7D%20x%5E2%7D%20-2x%5Cfrac%7B%5Cmathrm%7Bd%7D%20y%7D%7B%5Cmathrm%7Bd%7D%20x%7D&plus;ky%20=%200)
 
+```cmd
+python run.py --a '1' --b '(-2*x)' --c 'k' --n 5
+```
+![Hermite polynomials](/images/Hermite.png)
+
+- Legendre equation:
+- 
+![equation](https://latex.codecogs.com/gif.image?%5Cdpi%7B110%7D(1-x%5E2)%5Cfrac%7B%5Cmathrm%7Bd%7D%5E2%20y%7D%7B%5Cmathrm%7Bd%7D%20x%5E2%7D%20-2x%5Cfrac%7B%5Cmathrm%7Bd%7D%20y%7D%7B%5Cmathrm%7Bd%7D%20x%7D&plus;k(k&plus;1)y%20=%200)
+
+```cmd
+python run.py --a '(-x**2+1)' --b '(-2*x)' --c 'k(k+1)' --n 5
+```
+![Legendre polynomials](/images/Legendre.png)
+
+- Laguerre (α=0) equation:
+
+![equation](https://latex.codecogs.com/gif.image?%5Cdpi%7B110%7Dx%5Cfrac%7B%5Cmathrm%7Bd%7D%5E2%20y%7D%7B%5Cmathrm%7Bd%7D%20x%5E2%7D%20&plus;(1-x)%5Cfrac%7B%5Cmathrm%7Bd%7D%20y%7D%7B%5Cmathrm%7Bd%7D%20x%7D&plus;ky%20=%200)
+
+```cmd
+python run.py --a 'x' --b '(-x+1)' --c 'k' --n 5
+```
+![Laguerre polynomials](/images/Laguerre0.png)
