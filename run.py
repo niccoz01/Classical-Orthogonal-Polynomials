@@ -6,7 +6,7 @@ from sympy import parse_expr
 ap=argparse.ArgumentParser(description="Arguments for running the visualisation script")
 ap.add_argument("--a", type=str, dest='A', nargs='*', help="A(x)", required=True)
 ap.add_argument('--b', type=str, dest='B', nargs='*', help="B(x)", required=True)
-ap.add_argument('--c', type=str, dest='C', help="C(x)", required=True)
+ap.add_argument('--c', type=str, dest='C', nargs='*', help="C(x)", required=True)
 ap.add_argument("--n", type=int, dest='N', help="An integer to sepcify the number of polynomials to be calculated", default = 3)
 
 # Parsering the arguments using SymPy
