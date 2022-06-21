@@ -1,5 +1,5 @@
 import sympy as sym
-from sympy import Symbol, Derivative, Function, integrate, E, simplify, Eq, dsolve
+from sympy import Symbol, Derivative, Function, integrate, E, simplify
 from sympy.plotting.plot import plot
 from tabulate import tabulate
 from sympy.plotting import plot
@@ -15,7 +15,6 @@ y_x = Derivative(y, x)
 y_xx = Derivative(y, x, x)
 k = Symbol('k')     # Please use k as symbol for the eigenvalues
 n = Symbol('n')     # Subscript n-th eigenvalue/eigenfunction
-
 
 
 def p_n(A, B, n):
@@ -54,6 +53,7 @@ def p_n(A, B, n):
         table.append(t)
 
     # Plotting the polynomials 
+
     p0 = plot(l[0], xlim = (-5,5), ylim = (-10, 10), show = False)
     for g in range(1, len(l)):
         pg = plot(l[g], xlim = (-5,5), ylim = (-10, 10), show = False)
@@ -66,14 +66,13 @@ def p_n(A, B, n):
     return tab
 
 
-def sl(LHS, RHS, N = 3):
+def sl(A, B, C, N = 3):
     '''Function which puts the input (second-order ODE) into Sturm-Liouville form.
     Note that y' and y'' must be written as y_x and y_xx respectively.
     Example: 
     y_xx - 2*x*y_x + k*y = 0   [Hermite equation].
     In this case LHS = y_xx - 2*x*y_x + k*y and RHS = 0
     
-
     Args:
         LHS : left-hand side of the ODE
         RHS : right-hand side of the ODE
@@ -84,26 +83,20 @@ def sl(LHS, RHS, N = 3):
              table with the first N polynomials/eigenvalues and the general expression
              for the n-th polynomial and the n-th eigenvalues.
     '''
-    ODE = LHS-RHS
-    A = ODE.coeff(y_xx)
-    B = ODE.coeff(y_x)
-    C = ODE.coeff(y)
 
     if A==0:
-        fc = '''The input must be of the form: (A(x)*y_xx + B(x)*y_x + k*y, 0).
-One of the following conditions must be met:
+        fc = '''The input must must have a non-zero A(x).
+Furthermore, one of the following conditions must be met:
 1) A(x) is actually quadratic, B(x) is linear, A(x) has two distinct real roots, 
    the root of B(x) lies strictly between the roots of A(x), and the leading 
    terms of A(x) and B(x) have the same sign.
-
 2) A(x) is not actually quadratic, but is linear, B(x) is linear, the roots of A(x) 
    and B(x) are different, and the leading terms of A(x) and B(x) have the same 
    sign if the root of B(x) is less than the root of A(x), or vice versa.
-
 3) A(x) is just a nonzero constant, B(x) is linear, and the leading term of B(x) 
    has the opposite sign of A(X).
 '''
-        return fc
+        return print(fc)
     else:
         BA = integrate(B/A, x)
         p = E**BA
@@ -118,11 +111,9 @@ One of the following conditions must be met:
 
         fc = f'''The Sturm-Liouville form of the ODE is: {sl} = 0. 
 It has weight function w(x) = {w} and integrating factor p(x) = {p}.
-
 The n-th eigenvalue is: k_n = {k_general}
 The n-th polynomial is: P_n = {P_general}
-
 The first {N} eigenvalues and their corresponding polynomials are:
 {full_solns}
 Please note that these polynomials may differ up to a common factor.'''
-        return fc
+        return print(fc)
