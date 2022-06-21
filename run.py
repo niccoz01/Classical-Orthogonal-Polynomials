@@ -16,7 +16,7 @@ A = parse_expr(A[0])
 B = pa.B
 B = parse_expr(B[0])
 C = pa.C
-C = parse_expr(C)
+C = parse_expr(C[0])
 N = pa.N
 
 
