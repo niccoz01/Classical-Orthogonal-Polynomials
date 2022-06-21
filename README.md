@@ -59,7 +59,7 @@ Please note the following:
 ```cmd
 python run.py --a '1' --b '(-2*x)' --c 'k' --n 5
 ```
-![Hermite polynomials](/images/Hermite.png)
+![Hermite polynomials](/Images/Hermite.png)
 
 - Legendre equation:
 - 
@@ -68,7 +68,7 @@ python run.py --a '1' --b '(-2*x)' --c 'k' --n 5
 ```cmd
 python run.py --a '(-x**2+1)' --b '(-2*x)' --c 'k(k+1)' --n 5
 ```
-![Legendre polynomials](/images/Legendre.png)
+![Legendre polynomials](/Images/Legendre.png)
 
 - Laguerre (α=0) equation:
 
@@ -77,4 +77,4 @@ python run.py --a '(-x**2+1)' --b '(-2*x)' --c 'k(k+1)' --n 5
 ```cmd
 python run.py --a 'x' --b '(-x+1)' --c 'k' --n 5
 ```
-![Laguerre polynomials](/images/Laguerre0.png)
+![Laguerre polynomials](/Images/Laguerre0.png)
