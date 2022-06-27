@@ -62,7 +62,7 @@ python run.py --a '1' --b '(-2*x)' --c 'k' --n 5
 ![Hermite polynomials](/Images/Hermite.png)
 
 - Legendre equation:
-- 
+
 ![equation](https://latex.codecogs.com/gif.image?%5Cdpi%7B110%7D(1-x%5E2)%5Cfrac%7B%5Cmathrm%7Bd%7D%5E2%20y%7D%7B%5Cmathrm%7Bd%7D%20x%5E2%7D%20-2x%5Cfrac%7B%5Cmathrm%7Bd%7D%20y%7D%7B%5Cmathrm%7Bd%7D%20x%7D&plus;k(k&plus;1)y%20=%200)
 
 ```cmd
